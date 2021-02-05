@@ -15,5 +15,5 @@ password = ENV["RABBITMQ_PASSWORD"]
 Sneakers.configure  heartbeat: 30,
                     amqp: "amqp://#{username}:#{password}@#{host}:#{port}",
                     vhost: "/",
-                    exchange: "sneakers",
+                    exchange: "sneakers-contentful-service",
                     exchange_type: :direct

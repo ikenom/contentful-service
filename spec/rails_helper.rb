@@ -55,4 +55,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # https://github.com/mongoid/mongoid-rspec
+  config.include Mongoid::Matchers, type: :model
 end
