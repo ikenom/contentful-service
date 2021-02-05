@@ -89,3 +89,7 @@ rabbitmq:
     username: user
     password: password
     erlangCookie: d
+
+contentful:
+  access_token: sHD83tNC4BtCZFoEwQ54PjfH9isCEbIBN2HQDJ1rla0
+  space_id: gdnbla9utfkg
