@@ -6,11 +6,11 @@ class ProductSyncJob < ApplicationJob
   queue_as :default
 
   def perform(contentful_id:, content_type:)
-    contentful_product = contentful_client.entries(content_type: content_type, include: 2, "sys.id" => contentful_id).first
+    contentful_product = contentful_client.entries(:content_type => content_type, :include => 2, "sys.id" => contentful_id).first
     product_type =
       case content_type
-      when "meal"; Meal
-      when "ingredient"; Ingredient
+      when "meal" then Meal
+      when "ingredient" then Ingredient
       end
     product = product_type.where(contentful_id: contentful_id).first
 

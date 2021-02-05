@@ -17,7 +17,8 @@ RSpec.describe ProductExporterJob, type: :job do
       product: {
         name: product.name,
         price: product.price
-      })
+      }
+    )
 
     action = :add
     exporter.perform_now(action: action, product_id: product.id.to_s)

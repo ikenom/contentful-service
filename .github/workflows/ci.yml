@@ -33,7 +33,8 @@ jobs:
         docker-compose down
       env:
         IMAGE_NAME: ghcr.io/${{ github.event.repository.owner.login }}/for-testing/${{ github.event.repository.name }}
-
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
   lint:
     runs-on: ubuntu-latest
     needs: [build]

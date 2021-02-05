@@ -15,7 +15,8 @@ class ProductExporterJob < ApplicationJob
       product: {
         name: product.name,
         price: product.price
-      })
+      }
+    )
   end
 
   private
