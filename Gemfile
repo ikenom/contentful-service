@@ -14,6 +14,7 @@ gem "puma", "~> 4.1"
 gem "bootsnap", ">= 1.4.2", require: false
 
 gem "contentful"
+gem "contentful-management"
 gem "hutch"
 gem "mongoid"
 gem "sneakers"
@@ -25,6 +26,8 @@ group :development, :test do
   gem "faker"
   gem "pry-byebug"
   gem "rspec-rails", "~> 4.0.2"
+  gem "vcr"
+  gem "webmock"
 end
 
 group :development do

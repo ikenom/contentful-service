@@ -1,0 +1,589 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.contentful.com/spaces/gdnbla9utfkg/environments/master
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful-management.rb/2.13.1; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Connection:
+      - close
+      Host:
+      - api.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Source-Environment,X-Contentful-Team,X-Contentful-Parent-Id,x-contentful-validate-only,X-Contentful-Skip-UI-Draft-Validation,X-Contentful-Marketplace,X-Contentful-UI-Content-Auto-Save,cf-trace
+      Access-Control-Allow-Methods:
+      - DELETE,GET,HEAD,POST,PUT,PATCH,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-store
+      Cf-Organization-Id:
+      - 6xw07OKTdqQOisAOH9fNmy
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Contentful-Api:
+      - cma
+      Date:
+      - Sat, 06 Feb 2021 18:40:32 GMT
+      Etag:
+      - W/"1e95ec16999ac69454ed802df145aa2c"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - Contentful
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Ratelimit-Hour-Limit:
+      - '25200'
+      X-Contentful-Ratelimit-Hour-Remaining:
+      - '25199'
+      X-Contentful-Ratelimit-Reset:
+      - '0'
+      X-Contentful-Ratelimit-Second-Limit:
+      - '7'
+      X-Contentful-Ratelimit-Second-Remaining:
+      - '6'
+      X-Contentful-Request-Id:
+      - 2b2d3362fa3fc11d9392f47d1202a1fa
+      X-Contentful-Route:
+      - "/spaces/:space_id/environments/:id"
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '688'
+      Connection:
+      - Close
+      Set-Cookie:
+      - "<redacted-response>"
+      - nlbi_673446=XjkUB62rDX7prA4LKsJtVwAAAAA23iULWiJ+kPEklq5C47oY; path=/; Domain=.contentful.com
+      - visid_incap_673446=6vgjBKsxSgyBzuMwn/Rakp/iHmAAAAAAQUIPAAAAAAD8pthiBklPEZ2k2gGC3CVG;
+        expires=Sun, 06 Feb 2022 12:48:45 GMT; HttpOnly; path=/; Domain=.contentful.com
+      X-Cdn:
+      - Incapsula
+      X-Iinfo:
+      - 11-71421866-71421868 NNNY CT(0 1 0) RT(1612636831312 12) q(0 0 0 -1) r(0 0)
+        U5
+    body:
+      encoding: ASCII-8BIT
+      string: |+
+        {
+          "name":"master",
+          "sys":{
+            "type":"Environment",
+            "id":"master",
+            "version":1,
+            "space":{
+              "sys":{
+                "type":"Link",
+                "linkType":"Space",
+                "id":"gdnbla9utfkg"
+              }
+            },
+            "status":{
+              "sys":{
+                "type":"Link",
+                "linkType":"Status",
+                "id":"ready"
+              }
+            },
+            "createdBy":{
+              "sys":{
+                "type":"Link",
+                "linkType":"User",
+                "id":"1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "createdAt":"2021-01-29T02:24:37Z",
+            "updatedBy":{
+              "sys":{
+                "type":"Link",
+                "linkType":"User",
+                "id":"1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "updatedAt":"2021-01-29T02:24:37Z"
+          }
+        }
+
+  recorded_at: Sat, 06 Feb 2021 18:40:32 GMT
+- request:
+    method: get
+    uri: https://api.contentful.com/spaces/gdnbla9utfkg/environments/master/content_types/restaurant
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful-management.rb/2.13.1; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Connection:
+      - close
+      Host:
+      - api.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Source-Environment,X-Contentful-Team,X-Contentful-Parent-Id,x-contentful-validate-only,X-Contentful-Skip-UI-Draft-Validation,X-Contentful-Marketplace,X-Contentful-UI-Content-Auto-Save,cf-trace
+      Access-Control-Allow-Methods:
+      - DELETE,GET,HEAD,POST,PUT,PATCH,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-store
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - master
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Contentful-Api:
+      - cma
+      Date:
+      - Sat, 06 Feb 2021 18:40:32 GMT
+      Etag:
+      - '"11866653898151733907"'
+      Server:
+      - Contentful
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Ratelimit-Hour-Limit:
+      - '25200'
+      X-Contentful-Ratelimit-Hour-Remaining:
+      - '25199'
+      X-Contentful-Ratelimit-Reset:
+      - '0'
+      X-Contentful-Ratelimit-Second-Limit:
+      - '7'
+      X-Contentful-Ratelimit-Second-Remaining:
+      - '6'
+      X-Contentful-Request-Id:
+      - fc8e9146d43039287a47ac13bf332d7c
+      X-Contentful-Route:
+      - "/spaces/:space/environments/:environment/content_types/:id"
+      Content-Length:
+      - '1355'
+      Connection:
+      - Close
+      Set-Cookie:
+      - "<redacted-response>"
+      - nlbi_673446=ULhTIG0WvnjtELzDKsJtVwAAAAC391SFsf1B6E7OL8hNpil4; path=/; Domain=.contentful.com
+      - visid_incap_673446=3t99z6DhS8ml4j6jVUgrtp/iHmAAAAAAQUIPAAAAAABB9jr1dnIYVE6G+6bSIRh1;
+        expires=Sun, 06 Feb 2022 12:48:45 GMT; HttpOnly; path=/; Domain=.contentful.com
+      X-Cdn:
+      - Incapsula
+      X-Iinfo:
+      - 12-58920075-58920076 NNNN CT(15 39 0) RT(1612636831388 8) q(0 0 1 -1) r(2
+        2) U5
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "gdnbla9utfkg"
+              }
+            },
+            "id": "restaurant",
+            "type": "ContentType",
+            "createdAt": "2021-01-29T02:35:01.032Z",
+            "updatedAt": "2021-01-29T02:35:01.211Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 1,
+            "publishedAt": "2021-01-29T02:35:01.211Z",
+            "firstPublishedAt": "2021-01-29T02:35:01.211Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "publishedCounter": 1,
+            "version": 2,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            }
+          },
+          "displayField": "name",
+          "name": "Restaurant",
+          "description": "",
+          "fields": [
+            {
+              "id": "name",
+              "name": "Name",
+              "type": "Symbol",
+              "localized": false,
+              "required": true,
+              "validations": [
+                {
+                  "unique": true
+                }
+              ],
+              "disabled": false,
+              "omitted": false
+            }
+          ]
+        }
+  recorded_at: Sat, 06 Feb 2021 18:40:32 GMT
+- request:
+    method: post
+    uri: https://api.contentful.com/spaces/gdnbla9utfkg/environments/master/entries
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"name":{"en-US":"Test"}}}'
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful-management.rb/2.13.1; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      X-Contentful-Content-Type:
+      - restaurant
+      Content-Type-Id:
+      - restaurant
+      Connection:
+      - close
+      Host:
+      - api.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Source-Environment,X-Contentful-Team,X-Contentful-Parent-Id,x-contentful-validate-only,X-Contentful-Skip-UI-Draft-Validation,X-Contentful-Marketplace,X-Contentful-UI-Content-Auto-Save,cf-trace
+      Access-Control-Allow-Methods:
+      - DELETE,GET,HEAD,POST,PUT,PATCH,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-store
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - master
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Contentful-Api:
+      - cma
+      Date:
+      - Sat, 06 Feb 2021 18:40:32 GMT
+      Etag:
+      - '"8553070929140949737"'
+      Server:
+      - Contentful
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Ratelimit-Hour-Limit:
+      - '25200'
+      X-Contentful-Ratelimit-Hour-Remaining:
+      - '25198'
+      X-Contentful-Ratelimit-Reset:
+      - '0'
+      X-Contentful-Ratelimit-Second-Limit:
+      - '7'
+      X-Contentful-Ratelimit-Second-Remaining:
+      - '5'
+      X-Contentful-Request-Id:
+      - bbd0326a7e94e98ef7527ad7cf44e06e
+      X-Contentful-Route:
+      - "/spaces/:space/environments/:environment/entries"
+      Content-Length:
+      - '948'
+      Connection:
+      - Close
+      Set-Cookie:
+      - "<redacted-response>"
+      - nlbi_673446=Vl1ACrjoHUZUAJLZKsJtVwAAAAB4bZ+n3fW/tkGlF+9t/YTa; path=/; Domain=.contentful.com
+      - visid_incap_673446=QwGvJvZ4T2mFETiv5HXHtJ/iHmAAAAAAQUIPAAAAAAAB8V/b4yd16ZlwJy0ll6nx;
+        expires=Sun, 06 Feb 2022 12:48:45 GMT; HttpOnly; path=/; Domain=.contentful.com
+      X-Cdn:
+      - Incapsula
+      X-Iinfo:
+      - 14-116934626-116934628 NNNN CT(14 17 0) RT(1612636831533 9) q(0 0 0 -1) r(2
+        2) U5
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "gdnbla9utfkg"
+              }
+            },
+            "id": "2kwXJFVyWVRFXQS5NXz5nN",
+            "type": "Entry",
+            "createdAt": "2021-02-06T18:40:32.361Z",
+            "updatedAt": "2021-02-06T18:40:32.361Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "publishedCounter": 0,
+            "version": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "restaurant"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Test"
+            }
+          }
+        }
+  recorded_at: Sat, 06 Feb 2021 18:40:32 GMT
+- request:
+    method: put
+    uri: https://api.contentful.com/spaces/gdnbla9utfkg/environments/master/entries/2kwXJFVyWVRFXQS5NXz5nN/published
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful-management.rb/2.13.1; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      X-Contentful-Version:
+      - '1'
+      Version:
+      - '1'
+      Connection:
+      - close
+      Host:
+      - api.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Patch:
+      - application/json-patch+json
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Source-Environment,X-Contentful-Team,X-Contentful-Parent-Id,x-contentful-validate-only,X-Contentful-Skip-UI-Draft-Validation,X-Contentful-Marketplace,X-Contentful-UI-Content-Auto-Save,cf-trace
+      Access-Control-Allow-Methods:
+      - DELETE,GET,HEAD,POST,PUT,PATCH,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-store
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - master
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Type:
+      - application/vnd.contentful.management.v1+json
+      Contentful-Api:
+      - cma
+      Date:
+      - Sat, 06 Feb 2021 18:40:32 GMT
+      Etag:
+      - '"15270190203274896370"'
+      Server:
+      - Contentful
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Ratelimit-Hour-Limit:
+      - '25200'
+      X-Contentful-Ratelimit-Hour-Remaining:
+      - '25197'
+      X-Contentful-Ratelimit-Reset:
+      - '0'
+      X-Contentful-Ratelimit-Second-Limit:
+      - '7'
+      X-Contentful-Ratelimit-Second-Remaining:
+      - '4'
+      X-Contentful-Request-Id:
+      - 116d29d1419aafd30e1034ca9ba2def2
+      X-Contentful-Route:
+      - "/spaces/:space/environments/:environment/entries/:id/published"
+      Content-Length:
+      - '1216'
+      Connection:
+      - Close
+      Set-Cookie:
+      - "<redacted-response>"
+      - nlbi_673446=T76TLYW7AD4iPGyNKsJtVwAAAABD3Sz7EuZFY3aMlwJWCU+h; path=/; Domain=.contentful.com
+      - visid_incap_673446=6dJKZtQrRA+I0D8hYAhU3Z/iHmAAAAAAQUIPAAAAAACroA8p7zXNm2UGXKPVO5cS;
+        expires=Sun, 06 Feb 2022 08:54:33 GMT; HttpOnly; path=/; Domain=.contentful.com
+      X-Cdn:
+      - Incapsula
+      X-Iinfo:
+      - 6-38584887-38584888 NNNN CT(14 30 0) RT(1612636831562 9) q(0 0 1 -1) r(3 3)
+        U5
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "gdnbla9utfkg"
+              }
+            },
+            "id": "2kwXJFVyWVRFXQS5NXz5nN",
+            "type": "Entry",
+            "createdAt": "2021-02-06T18:40:32.361Z",
+            "updatedAt": "2021-02-06T18:40:32.610Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "publishedVersion": 1,
+            "publishedAt": "2021-02-06T18:40:32.610Z",
+            "firstPublishedAt": "2021-02-06T18:40:32.610Z",
+            "createdBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "updatedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "publishedCounter": 1,
+            "version": 2,
+            "publishedBy": {
+              "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "1lUBBvQfTQ278pjoIsK7y6"
+              }
+            },
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "restaurant"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "Test"
+            }
+          }
+        }
+  recorded_at: Sat, 06 Feb 2021 18:40:33 GMT
+recorded_with: VCR 6.0.0
