@@ -25,4 +25,9 @@ VCR.configure do |config|
       break interaction.response.headers[key].first if interaction.response.headers.key?(key)
     end
   end
+
+  config.default_cassette_options = {
+    record: :new_episodes
+  }
+
 end

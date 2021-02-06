@@ -10,5 +10,6 @@ RSpec.describe Product, type: :model do
     it { is_expected.to validate_presence_of(:contentful_id) }
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:price) }
+    it { is_expected.to validate_presence_of(:restaurant_contentful_id) }
   end
 end

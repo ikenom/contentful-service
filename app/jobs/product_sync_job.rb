@@ -15,13 +15,14 @@ class ProductSyncJob < ApplicationJob
     product = product_type.where(contentful_id: contentful_id).first
 
     if product.nil?
-      product = product_type.create!(contentful_id: contentful_id, price: contentful_product.price, name: contentful_product.name)
+      product = product_type.create!(contentful_id: contentful_id, price: contentful_product.price, name: contentful_product.name, restaurant_contentful_id: contentful_product.owner.id)
       ProductExporterJob.perform_later(action: :add, product_id: product.id.to_s)
     else
       return unless product_changed?(product: product, contentful_product: contentful_product)
 
       product.name = contentful_product.name
       product.price = contentful_product.price
+      product.restaurant_contentful_id = contentful_product.owner.id
       product.save!
 
       ProductExporterJob.perform_later(action: :update, product_id: product.id.to_s)
@@ -31,6 +32,8 @@ class ProductSyncJob < ApplicationJob
   private
 
   def product_changed?(product:, contentful_product:)
-    product.name != contentful_product.name || product.price != contentful_product.price
+    product.name != contentful_product.name ||
+    product.price != contentful_product.price ||
+    product.restaurant_contentful_id != contentful_product.owner.id
   end
 end

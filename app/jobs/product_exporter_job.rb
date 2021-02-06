@@ -7,6 +7,7 @@ class ProductExporterJob < ApplicationJob
     Hutch.connect
 
     product = Product.find(product_id)
+    owner = Restaurant.find_by(contentful_id: product.restaurant_contentful_id)
     routing_key = routing_key(action: action)
     Hutch.publish(
       routing_key,
@@ -14,7 +15,8 @@ class ProductExporterJob < ApplicationJob
       product_type: product._type,
       product: {
         name: product.name,
-        price: product.price
+        price: product.price,
+        owner_id: owner.ecommerce_id
       }
     )
   end

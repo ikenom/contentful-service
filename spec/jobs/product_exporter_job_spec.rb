@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe ProductExporterJob, type: :job do
-  let(:product) { create(:meal) }
+  let(:restaurant) { create(:restaurant) }
+  let(:product) { create(:meal, restaurant_contentful_id: restaurant.contentful_id) }
 
   subject(:exporter) { described_class }
 
@@ -16,7 +17,8 @@ RSpec.describe ProductExporterJob, type: :job do
       product_type: product._type,
       product: {
         name: product.name,
-        price: product.price
+        price: product.price,
+        owner_id: restaurant.ecommerce_id
       }
     )
 
