@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe CreateRestaurantConsumer do
-  let(:contentful_product) { create(:product, id: "id") }
   let(:message) {
     {
       ecommerce_id: Faker::Alphanumeric.alpha,
