@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContentfulController < ApplicationController
   def execute
     body = JSON.parse(request.body.read)
@@ -7,7 +9,7 @@ class ContentfulController < ApplicationController
       publish(body)
     end
 
-    render :ok
+    render "ok"
   end
 
   private
