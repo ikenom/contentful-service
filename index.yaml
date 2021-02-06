@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   contentful-service:
   - apiVersion: v2
+    appVersion: 9eb52ecabd695edfe8d48ff470c1256ba5d2f6b1
+    created: "2021-02-06T19:59:13.318077734Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - mongodb
+      version: ~10.3.6
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - rabbitmq
+      version: ~8.6.3
+    description: A Helm chart for Kubernetes
+    digest: 623471dd0b9f303fbbac56b069491dee789ecf583ab46cf3584d615fc6e2e9d5
+    name: contentful-service
+    type: application
+    urls:
+    - https://github.com/ikenom/contentful-service/releases/download/contentful-service-0.0.4/contentful-service-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     appVersion: c38de9050a4b273ed36a97ad5a55bccfcb0277c2
     created: "2021-02-05T04:41:47.866479705Z"
     dependencies:
