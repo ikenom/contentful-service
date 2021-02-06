@@ -4,11 +4,14 @@ RSpec.describe CreateRestaurantJob, type: :job do
   let(:entry) { build(:contentful_entry) }
   let(:ecommerce_id) { Faker::Alphanumeric.alpha }
 
-  subject(:perform) { described_class.perform_now(
-    ecommerce_id: ecommerce_id,
-    access_token: "",
-    space_id: "",
-    name: "") }
+  subject(:perform) do
+    described_class.perform_now(
+      ecommerce_id: ecommerce_id,
+      access_token: "",
+      space_id: "",
+      name: ""
+    )
+  end
 
   before(:each) do
     allow_any_instance_of(ContentfulManagement).to receive(:create_restaurant).and_return(entry)

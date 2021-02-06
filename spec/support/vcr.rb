@@ -1,11 +1,13 @@
-require 'vcr'
+# frozen_string_literal: true
+
+require "vcr"
 
 REQUEST_HEADERS = %w[
   Authorization
   Private-Token
-]
+].freeze
 
-RESPONSE_HEADERS = %w[Set-Cookie]
+RESPONSE_HEADERS = %w[Set-Cookie].freeze
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/vcr_cassettes"
