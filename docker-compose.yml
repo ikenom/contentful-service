@@ -30,6 +30,8 @@ services:
     image: $IMAGE_NAME:$IMAGE_TAG
     networks:
       - network
+    ports:
+      - "4000:3000"
 
   hutch:
     restart: always
