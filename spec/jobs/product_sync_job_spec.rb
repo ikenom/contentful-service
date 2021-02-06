@@ -3,12 +3,14 @@
 RSpec.describe ProductSyncJob, :vcr, type: :job do
   let(:content_type) { "meal" }
   let(:contentful_id) { "2bZYaQ1EZmt0eUteLZbUfy" }
-  let(:client) { Contentful::Client.new(
-    access_token: ENV["CONTENTFUL_ACCESS_TOKEN"],
-    space: ENV["CONTENTFUL_SPACE_ID"],
-    dynamic_entries: :auto,
-    raise_errors: true
-  )}
+  let(:client) do
+    Contentful::Client.new(
+      access_token: ENV["CONTENTFUL_ACCESS_TOKEN"],
+      space: ENV["CONTENTFUL_SPACE_ID"],
+      dynamic_entries: :auto,
+      raise_errors: true
+    )
+  end
   let(:contentful_product) { client.entries(:content_type => content_type, :include => 2, "sys.id" => contentful_id).first }
 
   subject(:perform) { described_class.perform_now(contentful_id: contentful_id, content_type: content_type) }
@@ -39,10 +41,10 @@ RSpec.describe ProductSyncJob, :vcr, type: :job do
 
     it "should not update current product if no changes" do
       create(:meal,
-        contentful_id: contentful_id,
-        name: contentful_product.name,
-        price: contentful_product.price,
-        restaurant_contentful_id: contentful_product.owner.id)
+             contentful_id: contentful_id,
+             name: contentful_product.name,
+             price: contentful_product.price,
+             restaurant_contentful_id: contentful_product.owner.id)
 
       perform
       expect(ProductExporterJob).not_to have_been_enqueued

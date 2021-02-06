@@ -33,7 +33,7 @@ class ProductSyncJob < ApplicationJob
 
   def product_changed?(product:, contentful_product:)
     product.name != contentful_product.name ||
-    product.price != contentful_product.price ||
-    product.restaurant_contentful_id != contentful_product.owner.id
+      product.price != contentful_product.price ||
+      product.restaurant_contentful_id != contentful_product.owner.id
   end
 end
