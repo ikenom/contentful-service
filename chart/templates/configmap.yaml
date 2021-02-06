@@ -8,3 +8,4 @@ data:
   RABBITMQ_PASSWORD: {{ .Values.rabbitmq.auth.password }}
   CONTENTFUL_ACCESS_TOKEN: {{ .Values.contentful.access_token }}
   CONTENTFUL_SPACE_ID: {{ .Values.contentful.space_id }}
+  CONTENTFUL_MANAGEMENT_ACCESS_TOKEN: {{ .Values.contentful.management_access_token }}

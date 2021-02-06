@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ProductSyncJob, type: :job do
+RSpec.describe ProductSyncJob, :vcr, type: :job do
   let(:content_type) { "meal" }
   let(:contentful_id) { 1 }
 

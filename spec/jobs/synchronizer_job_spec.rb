@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe SynchronizerJob, type: :job do
+RSpec.describe SynchronizerJob, :vcr, type: :job do
   let(:contentful_product) { create(:product, id: "id") }
   subject(:perform) { described_class.perform_now }
 
