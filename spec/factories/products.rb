@@ -5,5 +5,6 @@ FactoryBot.define do
     name { Faker::Alphanumeric.alpha }
     price { Faker::Commerce.price }
     contentful_id { Faker::Alphanumeric.alpha }
+    restaurant_contentful_id { Faker::Alphanumeric.alpha }
   end
 end
