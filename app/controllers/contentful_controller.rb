@@ -9,7 +9,7 @@ class ContentfulController < ApplicationController
       publish(body)
     end
 
-    render status: :ok
+    head :ok
   end
 
   private

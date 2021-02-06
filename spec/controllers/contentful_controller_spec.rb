@@ -24,5 +24,6 @@ RSpec.describe ContentfulController, type: :request do
     post "/", params: payload.to_json, headers: headers
 
     expect(ProductSyncJob).to have_been_enqueued.with({ contentful_id: contentful_id, content_type: content_type })
+    expect(response).to have_http_status(200)
   end
 end
