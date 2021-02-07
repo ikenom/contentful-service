@@ -41,10 +41,10 @@ RSpec.describe ProductSyncJob, :vcr, type: :job do
 
     it "should not update current product if no changes" do
       product = create(:meal,
-             contentful_id: contentful_id,
-             name: contentful_product.name,
-             price: contentful_product.price,
-             restaurant_contentful_id: contentful_product.owner.id)
+                       contentful_id: contentful_id,
+                       name: contentful_product.name,
+                       price: contentful_product.price,
+                       restaurant_contentful_id: contentful_product.owner.id)
 
       perform
       expect(ProductExporterJob).not_to have_been_enqueued.with(hash_including({ contentful_id: product.contentful_id }))
