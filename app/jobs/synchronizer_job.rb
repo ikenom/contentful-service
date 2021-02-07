@@ -8,6 +8,7 @@ class SynchronizerJob < ApplicationJob
   def perform
     ingredients_sync
     meals_sync
+    delete_sync
   end
 
   private
@@ -24,5 +25,10 @@ class SynchronizerJob < ApplicationJob
     contentful_client.entries(content_type: content_type, include: 2).each do |meal|
       ProductSyncJob.perform_later(contentful_id: meal.id, content_type: content_type)
     end
+  end
+
+  def delete_sync
+    ProductDeleteSyncJob.perform_later(content_type: "ingredient")
+    ProductDeleteSyncJob.perform_later(content_type: "meal")
   end
 end
