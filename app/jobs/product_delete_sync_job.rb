@@ -12,8 +12,6 @@ class ProductDeleteSyncJob < ApplicationJob
       when "ingredient" then Ingredient
       end
 
-    Rails.logger.info "The product type is #{product_type}"
-
     contentful_products_ids = contentful_client.entries(content_type: content_type).map(&:id)
     current_product_ids = product_type.all.map(&:contentful_id)
     exclusion_ids = current_product_ids - contentful_products_ids
