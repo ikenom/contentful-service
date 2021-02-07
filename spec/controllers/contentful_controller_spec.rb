@@ -26,4 +26,23 @@ RSpec.describe ContentfulController, type: :request do
     expect(ProductSyncJob).to have_been_enqueued.with({ contentful_id: contentful_id, content_type: content_type })
     expect(response).to have_http_status(200)
   end
+
+  it "should queue product delete sync job when content deleted" do
+    headers = { "X-Contentful-Topic" => "ContentManagement.Entry.delete" }
+    payload = {
+      sys: {
+        id: contentful_id,
+        contentType: {
+          sys: {
+            id: content_type
+          }
+        }
+      }
+    }
+
+    post "/", params: payload.to_json, headers: headers
+
+    expect(ProductDeleteSyncJob).to have_been_enqueued.with({ content_type: content_type })
+    expect(response).to have_http_status(200)
+  end
 end

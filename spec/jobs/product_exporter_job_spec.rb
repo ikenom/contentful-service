@@ -10,7 +10,7 @@ RSpec.describe ProductExporterJob, type: :job do
     allow(Hutch).to receive(:connect)
   end
 
-  it "should publish successfully" do
+  it "should publish successfully for add" do
     expect(Hutch).to receive(:publish).with(
       "ecommerce.product.add",
       product_id: product.contentful_id,
@@ -23,6 +23,32 @@ RSpec.describe ProductExporterJob, type: :job do
     )
 
     action = :add
+    exporter.perform_now(action: action, product_id: product.id.to_s)
+  end
+
+  it "should publish successfully for update" do
+    expect(Hutch).to receive(:publish).with(
+      "ecommerce.product.update",
+      product_id: product.contentful_id,
+      product_type: product._type,
+      product: {
+        name: product.name,
+        price: product.price,
+        owner_id: restaurant.ecommerce_id
+      }
+    )
+
+    action = :update
+    exporter.perform_now(action: action, product_id: product.id.to_s)
+  end
+
+  it "should publish successfully for delete" do
+    expect(Hutch).to receive(:publish).with(
+      "ecommerce.product.delete",
+      product_id: product.contentful_id
+    )
+
+    action = :delete
     exporter.perform_now(action: action, product_id: product.id.to_s)
   end
 

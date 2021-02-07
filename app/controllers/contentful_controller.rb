@@ -6,7 +6,9 @@ class ContentfulController < ApplicationController
 
     case request.headers["X-Contentful-Topic"]
     when "ContentManagement.Entry.publish"
-      publish(body)
+      publish(payload: body)
+    when "ContentManagement.Entry.delete"
+      delete(payload: body)
     end
 
     head :ok
@@ -14,9 +16,14 @@ class ContentfulController < ApplicationController
 
   private
 
-  def publish(body)
-    contentful_id = body["sys"]["id"]
-    content_type = body["sys"]["contentType"]["sys"]["id"]
+  def publish(payload:)
+    contentful_id = payload["sys"]["id"]
+    content_type = payload["sys"]["contentType"]["sys"]["id"]
     ProductSyncJob.perform_later(contentful_id: contentful_id, content_type: content_type)
+  end
+
+  def delete(payload:)
+    content_type = payload["sys"]["contentType"]["sys"]["id"]
+    ProductDeleteSyncJob.perform_later(content_type: content_type)
   end
 end
