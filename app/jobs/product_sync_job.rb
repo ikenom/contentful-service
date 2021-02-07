@@ -16,7 +16,7 @@ class ProductSyncJob < ApplicationJob
 
     if product.nil?
       product = product_type.create!(contentful_id: contentful_id, price: contentful_product.price, name: contentful_product.name, restaurant_contentful_id: contentful_product.owner.id)
-      ProductExporterJob.perform_later(action: :add, product_id: product.id.to_s)
+      ProductExporterJob.perform_later(action: :add, contentful_id: product.contentful_id)
     else
       return unless product_changed?(product: product, contentful_product: contentful_product)
 
@@ -25,7 +25,7 @@ class ProductSyncJob < ApplicationJob
       product.restaurant_contentful_id = contentful_product.owner.id
       product.save!
 
-      ProductExporterJob.perform_later(action: :update, product_id: product.id.to_s)
+      ProductExporterJob.perform_later(action: :update, contentful_id: product.contentful_id)
     end
   end
 

@@ -22,7 +22,7 @@ RSpec.describe ProductSyncJob, :vcr, type: :job do
   describe "new product" do
     it "should create new product" do
       expect { perform }.to change { Product.count }.by(1)
-      expect(ProductExporterJob).to have_been_enqueued
+      expect(ProductExporterJob).to have_been_enqueued.with(hash_including({ contentful_id: Product.last.contentful_id }))
     end
   end
 
@@ -36,18 +36,18 @@ RSpec.describe ProductSyncJob, :vcr, type: :job do
       expect(product.price).to eq(contentful_product.price)
       expect(product.restaurant_contentful_id).to eq(contentful_product.owner.id)
 
-      expect(ProductExporterJob).to have_been_enqueued
+      expect(ProductExporterJob).to have_been_enqueued.with(hash_including({ contentful_id: product.contentful_id }))
     end
 
     it "should not update current product if no changes" do
-      create(:meal,
-             contentful_id: contentful_id,
-             name: contentful_product.name,
-             price: contentful_product.price,
-             restaurant_contentful_id: contentful_product.owner.id)
+      product = create(:meal,
+                       contentful_id: contentful_id,
+                       name: contentful_product.name,
+                       price: contentful_product.price,
+                       restaurant_contentful_id: contentful_product.owner.id)
 
       perform
-      expect(ProductExporterJob).not_to have_been_enqueued
+      expect(ProductExporterJob).not_to have_been_enqueued.with(hash_including({ contentful_id: product.contentful_id }))
     end
   end
 end

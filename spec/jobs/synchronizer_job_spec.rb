@@ -18,6 +18,6 @@ RSpec.describe SynchronizerJob, :vcr, type: :job do
   it "should enqueue product delete sync job" do
     perform
 
-    expect(ProductDeleteSyncJob).to have_been_enqueued.exactly(2)
+    expect(ProductDeleteSyncJob).to have_been_enqueued.exactly(3)
   end
 end
