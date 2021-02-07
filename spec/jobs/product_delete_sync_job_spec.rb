@@ -13,7 +13,7 @@ RSpec.describe ProductDeleteSyncJob, :vcr, type: :job do
   end
 
   before(:each) do
-    allow(ProductExporterJob).to receive(:perform_now)
+    ActiveJob::Base.queue_adapter = :test
   end
 
   it "should delete products not found in contentful" do
@@ -34,14 +34,21 @@ RSpec.describe ProductDeleteSyncJob, :vcr, type: :job do
     create(:meal, contentful_id: contentful_id)
     create(:meal)
 
-    expect(ProductExporterJob).to receive(:perform_now).with(hash_including({ action: :delete }))
     described_class.perform_now(content_type: content_type)
+    expect(ProductExporterJob).to have_been_enqueued
   end
 
   it "should not broadcast deletion if nothing was deleted" do
     create(:meal, contentful_id: contentful_id)
 
     described_class.perform_now(content_type: content_type)
-    expect(ProductExporterJob).to_not receive(:perform_now)
+    expect(ProductExporterJob).to_not have_been_enqueued
+  end
+
+  it "should not broadcast deletion if restaurant" do
+    create(:restaurant)
+
+    described_class.perform_now(content_type: "restaurant")
+    expect(ProductExporterJob).to_not have_been_enqueued
   end
 end

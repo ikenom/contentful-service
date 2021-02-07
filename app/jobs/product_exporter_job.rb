@@ -3,21 +3,21 @@
 class ProductExporterJob < ApplicationJob
   queue_as :default
 
-  def perform(action:, product_id:)
+  def perform(action:, contentful_id:)
     Hutch.connect
 
     case action
     when :add, :update
-      upsert(action: action, product_id: product_id)
+      upsert(action: action, contentful_id: contentful_id)
     when :delete
-      delete(product_id: product_id)
+      delete(contentful_id: contentful_id)
     end
   end
 
   private
 
-  def upsert(action:, product_id:)
-    product = Product.find(product_id)
+  def upsert(action:, contentful_id:)
+    product = Product.find_by(contentful_id: contentful_id)
     owner = Restaurant.find_by(contentful_id: product.restaurant_contentful_id)
     routing_key = routing_key(action: action)
     Hutch.publish(
@@ -32,12 +32,11 @@ class ProductExporterJob < ApplicationJob
     )
   end
 
-  def delete(product_id:)
-    product = Product.find(product_id)
+  def delete(contentful_id:)
     routing_key = routing_key(action: :delete)
     Hutch.publish(
       routing_key,
-      product_id: product.contentful_id
+      product_id: contentful_id
     )
   end
 

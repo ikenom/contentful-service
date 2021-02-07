@@ -30,5 +30,6 @@ class SynchronizerJob < ApplicationJob
   def delete_sync
     ProductDeleteSyncJob.perform_later(content_type: "ingredient")
     ProductDeleteSyncJob.perform_later(content_type: "meal")
+    ProductDeleteSyncJob.perform_later(content_type: "restaurant")
   end
 end

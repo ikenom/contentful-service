@@ -23,7 +23,7 @@ RSpec.describe ProductExporterJob, type: :job do
     )
 
     action = :add
-    exporter.perform_now(action: action, product_id: product.id.to_s)
+    exporter.perform_now(action: action, contentful_id: product.contentful_id)
   end
 
   it "should publish successfully for update" do
@@ -39,7 +39,7 @@ RSpec.describe ProductExporterJob, type: :job do
     )
 
     action = :update
-    exporter.perform_now(action: action, product_id: product.id.to_s)
+    exporter.perform_now(action: action, contentful_id: product.contentful_id)
   end
 
   it "should publish successfully for delete" do
@@ -49,7 +49,7 @@ RSpec.describe ProductExporterJob, type: :job do
     )
 
     action = :delete
-    exporter.perform_now(action: action, product_id: product.id.to_s)
+    exporter.perform_now(action: action, contentful_id: product.contentful_id)
   end
 
   describe "#routing_key" do
@@ -57,21 +57,21 @@ RSpec.describe ProductExporterJob, type: :job do
       expect(Hutch).to receive(:publish).with("cms.product.added", any_args)
 
       action = :add
-      exporter.perform_now(action: action, product_id: product.id.to_s)
+      exporter.perform_now(action: action, contentful_id: product.contentful_id)
     end
 
     it "should use update queue" do
       expect(Hutch).to receive(:publish).with("cms.product.updated", any_args)
 
       action = :update
-      exporter.perform_now(action: action, product_id: product.id.to_s)
+      exporter.perform_now(action: action, contentful_id: product.contentful_id)
     end
 
     it "should use delete queue" do
       expect(Hutch).to receive(:publish).with("cms.product.deleted", any_args)
 
       action = :delete
-      exporter.perform_now(action: action, product_id: product.id.to_s)
+      exporter.perform_now(action: action, contentful_id: product.contentful_id)
     end
   end
 end
