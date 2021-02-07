@@ -44,11 +44,11 @@ class ProductExporterJob < ApplicationJob
   def routing_key(action:)
     case action
     when :add
-      "ecommerce.product.add"
+      "cms.product.added"
     when :update
-      "ecommerce.product.update"
+      "cms.product.updated"
     when :delete
-      "ecommerce.product.delete"
+      "cms.product.deleted"
     end
   end
 end
