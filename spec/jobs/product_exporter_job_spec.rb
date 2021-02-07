@@ -12,7 +12,7 @@ RSpec.describe ProductExporterJob, type: :job do
 
   it "should publish successfully for add" do
     expect(Hutch).to receive(:publish).with(
-      "ecommerce.product.add",
+      "ecommerce.product.added",
       product_id: product.contentful_id,
       product_type: product._type,
       product: {
@@ -28,7 +28,7 @@ RSpec.describe ProductExporterJob, type: :job do
 
   it "should publish successfully for update" do
     expect(Hutch).to receive(:publish).with(
-      "ecommerce.product.update",
+      "ecommerce.product.updated",
       product_id: product.contentful_id,
       product_type: product._type,
       product: {
@@ -44,7 +44,7 @@ RSpec.describe ProductExporterJob, type: :job do
 
   it "should publish successfully for delete" do
     expect(Hutch).to receive(:publish).with(
-      "ecommerce.product.delete",
+      "ecommerce.product.deleted",
       product_id: product.contentful_id
     )
 
@@ -54,21 +54,21 @@ RSpec.describe ProductExporterJob, type: :job do
 
   describe "#routing_key" do
     it "should use add queue" do
-      expect(Hutch).to receive(:publish).with("ecommerce.product.add", any_args)
+      expect(Hutch).to receive(:publish).with("ecommerce.product.added", any_args)
 
       action = :add
       exporter.perform_now(action: action, product_id: product.id.to_s)
     end
 
     it "should use update queue" do
-      expect(Hutch).to receive(:publish).with("ecommerce.product.update", any_args)
+      expect(Hutch).to receive(:publish).with("ecommerce.product.updated", any_args)
 
       action = :update
       exporter.perform_now(action: action, product_id: product.id.to_s)
     end
 
     it "should use delete queue" do
-      expect(Hutch).to receive(:publish).with("ecommerce.product.delete", any_args)
+      expect(Hutch).to receive(:publish).with("ecommerce.product.deleted", any_args)
 
       action = :delete
       exporter.perform_now(action: action, product_id: product.id.to_s)
