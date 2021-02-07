@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cdn.contentful.com/spaces/gdnbla9utfkg/environments/master/content_types?limit=1000
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful.rb/2.15.4; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Accept-Encoding:
+      - gzip
+      Connection:
+      - close
+      Host:
+      - cdn.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '794'
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '86400'
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - 4621fe99-cbad-48b4-9c48-6b528201303b
+      Cf-Organization-Id:
+      - 6xw07OKTdqQOisAOH9fNmy
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Contentful-Api:
+      - cda_cached
+      Etag:
+      - W/"15641962911019208188"
+      Server:
+      - Contentful
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Region:
+      - us-east-1
+      X-Contentful-Route:
+      - "/spaces/:space/environments/:environment/content_types"
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 07 Feb 2021 03:25:03 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '1732'
+      X-Served-By:
+      - cache-fty21351-FTY
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '2'
+      Vary:
+      - Accept-Encoding
+      X-Contentful-Request-Id:
+      - 4e5b7017-a7ce-406c-98d8-445f5dd08baf
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+1YUW/bIBB+76+oeF4j20mmJW9V10rTtq5aqz1s6gOJSYRiYw9Ipqzqf98BxgFst0lXTbNaP0SBgzvufHffh++Ojo+R2Ao0Pb6DvzCQ25LACJ1yjrcI5u7fqDWykDiD+aEeiRUtYRDpQUZzKmEUR5GZoJLkSuMPrdHoDcxoU6LEc2XLrjCTzmHUhJ60h/pE2Qopo7sHzLPVTXXoa60xWEBT5c8yZbMMT9ZysVoqt+xzX//XjpoHmT2ULTlJKWHS0Vkf5qxgEkTatrN1zgmWJD1VIUFJlMQnUXySTG6iZDpMpqPhYJK8++5uWJdpuCE5id7eJPE0hg3jwXASeRsI21BesFyda5/oGWdyLCThYXD2jey5Y/PR6HGyoYIWTCVFUq2uo4tSKsoMby8oyfSbYTjfBdCMYPZDM/YoJWLOaSmNalT7ghZK1y7l1Ev0kspEwDOk1tTGLt0jaImNy/U2nxWZFzWUFXOc0d9EnX6BM0HchEOc/FxTSBsQSr72ZeA6nmUdGwsoI0gcq7QtL1ucWmA3OR2fLkKBdelync+CRPi/XJpjPhN+yPWrg6w4a4p641bJC0koa3fsqk3YG9egR3Zk4fuGxDplAMYrnX9TWJ5Ji1VuZT1c/iDdQPlDz4Y25PccAx6+Kt1N4K1bODRr7C/6SGQR9GQjQ9/IEvvJUm8CEZGY0y75l5zRTcFDJKwUQw1VYg9IlfQ2mNmBYyhthc2W9lRyGiBy3XSvmqLeJDzN8dIPb+1Wi6gTZPfvu02cOQRL/CpzCNOpEFC5e0JN8YuFuGH7covoGZz+K/zs9PmcSa6ZrXlsJpvcr2hKj0lrToCoO3zUvofD6eoYCOh4kIzGj9FVy2/Hw+koHkwmSW/p6uiJbPWzG/RXntoCBLu7VAe161zQK8LQdkM9mC6oK61brh3cwbmeHorkbnMEfuLeoYP2CB8A9oSHV6h/6EvFK9Q3KcxzXZVfKtRzIiRec/xs36fG0ygeJHG8L+APWzf06vvUEwH/azP0LxX2qwhW/BlGt0f3R38AOUrGPFkWAAA=
+  recorded_at: Sun, 07 Feb 2021 03:25:03 GMT
+- request:
+    method: get
+    uri: https://cdn.contentful.com/spaces/gdnbla9utfkg/environments/master/entries?content_type=meal
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful.rb/2.15.4; platform ruby/2.7.1; os Linux;
+      Authorization:
+      - "<redacted-request>"
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Accept-Encoding:
+      - gzip
+      Connection:
+      - close
+      Host:
+      - cdn.contentful.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '1039'
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '86400'
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - 4621fe99-cbad-48b4-9c48-6b528201303b
+      Cf-Organization-Id:
+      - 6xw07OKTdqQOisAOH9fNmy
+      Cf-Space-Id:
+      - gdnbla9utfkg
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Contentful-Api:
+      - cda_cached
+      Etag:
+      - W/"9913825169474270442"
+      Server:
+      - Contentful
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Region:
+      - us-east-1
+      X-Contentful-Route:
+      - "/spaces/:space/environments/:environment/entries"
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 07 Feb 2021 03:25:03 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '1732'
+      X-Served-By:
+      - cache-fty21343-FTY
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      Vary:
+      - Accept-Encoding
+      X-Contentful-Request-Id:
+      - 1d747a09-2489-4622-af10-3774992f20fb
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA91YT5ObNhS/76fwcO5iQBgsbp6tk2zr2EnXTpvt5CBAYGWNcED2ZpvZ715JgC1YwO50k0yig8d60tP7/9MTXy4GAy1/yDVv8IX/5RP2sMV8pk2yDD1onPb4i9jDUoY2nG7KWX5HtnxiyMmGJISJJaOYE4YTceDf8sDi2IYUKSnfokCIqnYUREUXQZDESqcZoXeakHkcXDq9W5Y638gTGxtIKMyJQ+pvENyx6C4WVlXj8fBf2lkMreCx/Nv36K05vU2YgVcMz279VfSgnH9QbEpZVlsIMowYDifCL5plWOalYV5acGlY3sj2ANShDW/Vk3bb8CkDMJeG7dm2ZwEdwFGNAdM9yVKaYCpknPZhYVKCcoazpovO9e9UkXnShxnek5yklGtnKa4NUsq4zmXITut9rm5XyrmtGZBgnsAntd6kAdrIAsD0cnVTMRySQ4sI3oTHehEJo1GUSJY5iXFGEB3cMHyvRpfQOMMh4XYfC6NINdUBLUVS5mOPE2QBHkugmYm1hJ5/uv71+vU8TkMfzLguq/l2P1N9wqu91UMflABuMyLLdqxDqJDTe8oT65xM7DHmpCllZboReJlF16G1X7H3C4T/Gv0ZOLuO6JYWFZaJX2mNRmiw2YVYgb7CdxVwHaGrNS6t8NW6U6ZIj9GNCLaBmFC3F8YagVMLoN9ltZ2Vkk+TSOsBNAA9YOrQNVR84hq3QlqBgV0s3aDW7dkeYPtPfu8Atz7PKhAn78VqaN0g123H+RnSDXWHPMlwztAuQ/xyUPTqs6UD+Mr7v4SRFvDjIiv4W3Khgz9aJFegckDRI+rVmo9SSltj8Bx++0qV1Y6qz1BYtuFZtj52ndOFZV0aztIyvZHjAUM3oN1g+XELy1YuGZ4E372yjlf5t6ysNEEsrbVtWoRE4wfquIMyX1xooxp1m6UME9GIuTU6b0jEEUWffsCu33FDEvf6Oxwj2uwaOREzJPod1RNKq8AZq2bBqjULAqYSFDeb/+eo8Umec6NUM+X1W1wSzsK/uno3ScxJOrfWq+s3n1+Nl4tz49jW4TyHyk9vW0Vlcxqs6eLzb8nenU0XJkzA8gUDPSof4P4AupJShkUr/POT9jgd8W2F4qeJ0tfj2K5nQH0MzoDi6p3XxfLjQnG9x/kfDQMjrHhjLdtwjci1xsNol4mvD9pwKIEj1wMWIVHquU4xG6qv+2F7Fgwdf4SdkWv5wIcmiAAeh65rmWhsAhjBwBoyqYz+cYvjJtSFHOjIpv7qq5oV8o9Q1zEct4bFRQ23opxcuichW3PGsS2/mtSHtsYkXgtwdiFsrKovtFp3Jo+NuPfm5XO0x6D6NVqg8VBarkhTvo2U1ILygc8eLx4v/gUwkNE4PRIAAA==
+  recorded_at: Sun, 07 Feb 2021 03:25:03 GMT
+recorded_with: VCR 6.0.0

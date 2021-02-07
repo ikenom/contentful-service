@@ -25,7 +25,7 @@ class ProductSyncJob < ApplicationJob
       product.restaurant_contentful_id = contentful_product.owner.id
       product.save!
 
-      ProductExporterJob.perform_later(action: :update, product_id: product.id.to_s)
+      ProductExporterJob.perform_now(action: :update, product_id: product.id.to_s)
     end
   end
 
