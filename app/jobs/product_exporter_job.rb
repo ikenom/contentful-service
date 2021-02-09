@@ -27,7 +27,7 @@ class ProductExporterJob < ApplicationJob
       product: {
         name: product.name,
         price: product.price,
-        owner_id: owner.ecommerce_id
+        owner_id: owner.user_id
       }
     )
   end

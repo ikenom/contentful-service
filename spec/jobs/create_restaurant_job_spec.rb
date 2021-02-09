@@ -2,11 +2,11 @@
 
 RSpec.describe CreateRestaurantJob, type: :job do
   let(:entry) { build(:contentful_entry) }
-  let(:ecommerce_id) { Faker::Alphanumeric.alpha }
+  let(:user_id) { Faker::Alphanumeric.alpha }
 
   subject(:perform) do
     described_class.perform_now(
-      ecommerce_id: ecommerce_id,
+      user_id: user_id,
       access_token: "",
       space_id: "",
       name: ""
@@ -20,13 +20,13 @@ RSpec.describe CreateRestaurantJob, type: :job do
 
   it "should create new restaurant" do
     expect { perform }.to change { Restaurant.count }.by(1)
-    expect(Restaurant.last.ecommerce_id).to eq(ecommerce_id)
+    expect(Restaurant.last.user_id).to eq(user_id)
     expect(Restaurant.last.contentful_id).to eq(entry.id)
   end
 
   describe "error" do
     let(:restaurant) { create(:restaurant) }
-    let(:ecommerce_id) { restaurant.ecommerce_id }
+    let(:user_id) { restaurant.user_id }
 
     it "should raise error when Restaurant already exists" do
       expect { perform }.to raise_error(RuntimeError)

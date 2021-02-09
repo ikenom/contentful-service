@@ -8,6 +8,6 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to be_valid }
 
     it { is_expected.to validate_presence_of(:contentful_id) }
-    it { is_expected.to validate_presence_of(:ecommerce_id) }
+    it { is_expected.to validate_presence_of(:user_id) }
   end
 end
