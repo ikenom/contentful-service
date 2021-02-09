@@ -18,7 +18,7 @@ RSpec.describe ProductExporterJob, type: :job do
       product: {
         name: product.name,
         price: product.price,
-        owner_id: restaurant.ecommerce_id
+        owner_id: restaurant.user_id
       }
     )
 
@@ -34,7 +34,7 @@ RSpec.describe ProductExporterJob, type: :job do
       product: {
         name: product.name,
         price: product.price,
-        owner_id: restaurant.ecommerce_id
+        owner_id: restaurant.user_id
       }
     )
 
