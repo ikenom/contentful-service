@@ -6,7 +6,7 @@ class CreateRestaurantConsumer
 
   def process(message)
     CreateRestaurantJob.perform_later(
-      ecommerce_id: message[:ecommerce_id],
+      user_id: message[:user_id],
       name: message[:name],
       access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"],
       space_id: ENV["CONTENTFUL_SPACE_ID"]
