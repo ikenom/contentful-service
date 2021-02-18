@@ -13,6 +13,7 @@ gem "puma", "~> 4.1"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
+gem "advanced-sneakers-activejob"
 gem "contentful"
 gem "contentful-management"
 gem "hutch"

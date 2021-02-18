@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductExporterJob < ApplicationJob
-  queue_as :default
+  queue_as :contentful_service_product_exporter
 
   def perform(action:, contentful_id:)
     Hutch.connect
@@ -22,7 +22,7 @@ class ProductExporterJob < ApplicationJob
     routing_key = routing_key(action: action)
     Hutch.publish(
       routing_key,
-      product_id: product.contentful_id,
+      product_id: product.id.to_s,
       product_type: product._type,
       product: {
         name: product.name,

@@ -13,7 +13,7 @@ RSpec.describe ProductExporterJob, type: :job do
   it "should publish successfully for add" do
     expect(Hutch).to receive(:publish).with(
       "cms.product.added",
-      product_id: product.contentful_id,
+      product_id: product.id.to_s,
       product_type: product._type,
       product: {
         name: product.name,
@@ -29,7 +29,7 @@ RSpec.describe ProductExporterJob, type: :job do
   it "should publish successfully for update" do
     expect(Hutch).to receive(:publish).with(
       "cms.product.updated",
-      product_id: product.contentful_id,
+      product_id: product.id.to_s,
       product_type: product._type,
       product: {
         name: product.name,

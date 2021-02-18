@@ -3,7 +3,7 @@
 class ProductSyncJob < ApplicationJob
   include ContentfulClient
 
-  queue_as :default
+  queue_as :contentful_service_product_sync
 
   def perform(contentful_id:, content_type:)
     contentful_product = contentful_client.entries(:content_type => content_type, :include => 2, "sys.id" => contentful_id).first

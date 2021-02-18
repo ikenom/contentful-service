@@ -3,7 +3,7 @@
 class SynchronizerJob < ApplicationJob
   include ContentfulClient
 
-  queue_as :default
+  queue_as :contentful_service_synchronizer
 
   def perform
     ingredients_sync
