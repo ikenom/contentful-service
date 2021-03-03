@@ -8,7 +8,7 @@ class CreateRestaurantConsumer
     CreateRestaurantJob.perform_later(
       sender_id: message[:sender_id],
       restaurant_name: message[:name],
-      space_name: InitContentfulSpaceJob::SPACE_NAME,
+      space_name: InitContentfulSpaceJob::SPACE_NAME
     )
   end
 end

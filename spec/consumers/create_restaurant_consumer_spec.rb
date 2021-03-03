@@ -16,9 +16,9 @@ RSpec.describe CreateRestaurantConsumer do
   it "should enqueue create restaurant jobs" do
     consumer.process(message)
     expect(CreateRestaurantJob).to have_been_enqueued.with({
-                                                                            sender_id: message[:sender_id],
-                                                                            restaurant_name: message[:name],
-                                                                            space_name: InitContentfulSpaceJob::SPACE_NAME,
-                                                                          })
+                                                             sender_id: message[:sender_id],
+                                                             restaurant_name: message[:name],
+                                                             space_name: InitContentfulSpaceJob::SPACE_NAME,
+                                                           })
   end
 end

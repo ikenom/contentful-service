@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContentfulEntryService
   attr_reader :client
 
@@ -6,7 +8,7 @@ class ContentfulEntryService
   end
 
   def environment(space_name:, environment_name:)
-    space = client.spaces.all.filter {|space| space.name == space_name}.first
+    space = client.spaces.all.filter { |s| s.name == space_name }.first
     space.environments.find(environment_name)
   end
 
@@ -26,7 +28,8 @@ class ContentfulEntryService
       name: name,
       ingredients: ingredients_entry,
       prepped_ingredients: prepped_ingredients_entry,
-      meals: meals_entry)
+      meals: meals_entry
+    )
 
     restaurant_entry.publish
   end
@@ -60,7 +63,8 @@ class ContentfulEntryService
       name: name,
       price: price,
       restaurant: restaurant_entry,
-      ingredients: ingredient_entries)
+      ingredients: ingredient_entries
+    )
 
     prepped_ingredient_entry.publish
 
@@ -84,7 +88,8 @@ class ContentfulEntryService
       name: name,
       price: price,
       restaurant: restaurant_entry,
-      ingredients: ingredient_entries)
+      ingredients: ingredient_entries
+    )
 
     meal_entry.publish
 

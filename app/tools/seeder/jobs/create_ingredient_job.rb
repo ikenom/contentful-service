@@ -14,7 +14,8 @@ module Seeder
           name: ingredient_name,
           price: price,
           restaurant_entry_id: restaurant_entry_id,
-          environment: environment)
+          environment: environment
+        )
       end
     end
   end

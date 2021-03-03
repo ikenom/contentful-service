@@ -26,6 +26,11 @@ RSpec.describe CreateRestaurantJob, type: :job do
     expect(Restaurant.last.contentful_id).to eq(entry.id)
   end
 
+  it "should enqueue Restaurant Created Job" do
+    perform
+    expect(RestaurantCreatedJob).to have_been_enqueued
+  end
+
   describe "error" do
     let(:restaurant) { create(:restaurant) }
     let(:name) { restaurant.name }

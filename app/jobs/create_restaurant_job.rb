@@ -10,6 +10,7 @@ class CreateRestaurantJob < ApplicationJob
     environment = contentful_entry_service.environment(space_name: space_name, environment_name: "master")
     restaurant_entry = contentful_entry_service.create_restaurant(environment: environment, name: restaurant_name)
 
-    Restaurant.create!(contentful_id: restaurant_entry.id, name: restaurant_name)
+    restaurant = Restaurant.create!(contentful_id: restaurant_entry.id, name: restaurant_name)
+    RestaurantCreatedJob.perform_later(sender_id: sender_id, contentful_id: restaurant.contentful_id)
   end
 end

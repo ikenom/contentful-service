@@ -25,7 +25,7 @@ class ProductExporterJob < ApplicationJob
       vendor_id: product.restaurant_contentful_id,
       name: product.name,
       price: product.price,
-      type: product._type,
+      type: product._type
     )
   end
 

@@ -1,4 +1,6 @@
-require 'set'
+# frozen_string_literal: true
+
+require "set"
 
 module Seeder
   module Services
@@ -22,7 +24,8 @@ module Seeder
             space_name: space_name,
             ingredient_name: name,
             price: price,
-            restaurant_entry_id: restaurant_entry_id)
+            restaurant_entry_id: restaurant_entry_id
+          )
         end
 
         prepped_ingredient_names.each_with_index do |name, index|
@@ -33,7 +36,8 @@ module Seeder
             prepped_ingredient_name: name,
             price: price,
             restaurant_entry_id: restaurant_entry_id,
-            ingredient_entry_ids: ingredient_entries.sample(random.rand(2..5), random: random).map(&:id))
+            ingredient_entry_ids: ingredient_entries.sample(random.rand(2..5), random: random).map(&:id)
+          )
         end
 
         meal_names.each_with_index do |name, index|
@@ -48,7 +52,8 @@ module Seeder
             meal_name: name,
             price: price,
             restaurant_entry_id: restaurant_entry_id,
-            ingredient_entry_ids: entries.sample(random.rand(7..10), random: random).map(&:id))
+            ingredient_entry_ids: entries.sample(random.rand(7..10), random: random).map(&:id)
+          )
         end
       end
 
@@ -56,25 +61,19 @@ module Seeder
 
       def ingredient_names(count:)
         set = Set.new
-        while set.count < count
-          set.add(Faker::Food.ingredient)
-        end
+        set.add(Faker::Food.ingredient) while set.count < count
         set
       end
 
       def prepped_ingredient_names(count:)
         set = Set.new
-        while set.count < count
-          set.add(Faker::Food.spice)
-        end
+        set.add(Faker::Food.spice) while set.count < count
         set
       end
 
       def meal_names(count:)
         set = Set.new
-        while set.count < count
-          set.add(Faker::Food.dish)
-        end
+        set.add(Faker::Food.dish) while set.count < count
         set
       end
     end

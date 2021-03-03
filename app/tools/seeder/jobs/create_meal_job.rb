@@ -13,7 +13,8 @@ module Seeder
           price: price,
           restaurant_entry_id: restaurant_entry_id,
           ingredient_entry_ids: ingredient_entry_ids,
-          environment: environment)
+          environment: environment
+        )
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InitContentfulSpaceJob < ApplicationJob
   queue_as :init_contentful_space
 
@@ -34,7 +36,8 @@ class InitContentfulSpaceJob < ApplicationJob
       environment: environment,
       name: "Ingredients",
       id: ContententfulContentTypeService::INGREDIENTS_ID,
-      validation_id: ContententfulContentTypeService::INGREDIENT_ID)
+      validation_id: ContententfulContentTypeService::INGREDIENT_ID
+    )
   end
 
   def prepped_ingredients(client:, environment:)
@@ -42,7 +45,8 @@ class InitContentfulSpaceJob < ApplicationJob
       environment: environment,
       name: "Prepped Ingredients",
       id: ContententfulContentTypeService::PREPPED_INGREDIENTS_ID,
-      validation_id: ContententfulContentTypeService::PREPPED_INGREDIENT_ID)
+      validation_id: ContententfulContentTypeService::PREPPED_INGREDIENT_ID
+    )
   end
 
   def meals(client:, environment:)
@@ -50,6 +54,7 @@ class InitContentfulSpaceJob < ApplicationJob
       environment: environment,
       name: "Meals",
       id: ContententfulContentTypeService::MEALS_ID,
-      validation_id: ContententfulContentTypeService::MEAL_ID)
+      validation_id: ContententfulContentTypeService::MEAL_ID
+    )
   end
 end
