@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateRestaurantJob < ApplicationJob
-  queue_as :create_restaurant
+  queue_as :contentful_service_create_restaurant
 
   def perform(sender_id:, space_name:, restaurant_name:)
     raise "Restaurant with name: #{restaurant_name} already exists" if Restaurant.where(name: restaurant_name).exists?
