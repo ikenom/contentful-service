@@ -3,7 +3,7 @@
 class ProductDeleteSyncJob < ApplicationJob
   include ContentfulClient
 
-  queue_as :product_delete_sync
+  queue_as :contentful_service_product_delete_sync
 
   def perform(content_type:)
     product_type =

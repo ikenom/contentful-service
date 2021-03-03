@@ -2,7 +2,9 @@
 
 class CreateRestaurantConsumer
   include Hutch::Consumer
+
   consume "cms.vendor.create"
+  queue_name "consumer_contentful_service_create_restaurant"
 
   def process(message)
     CreateRestaurantJob.perform_later(

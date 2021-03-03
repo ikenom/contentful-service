@@ -3,7 +3,7 @@
 module Seeder
   module Jobs
     class CreateIngredientJob < ApplicationJob
-      queue_as :create_ingredient
+      queue_as :contentful_service_create_ingredient
 
       def perform(space_name:, ingredient_name:, price:, restaurant_entry_id:)
         contentful_entry_service = ContentfulEntryService.new(access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"])

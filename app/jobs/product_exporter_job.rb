@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductExporterJob < ApplicationJob
-  queue_as :product_exporter
+  queue_as :contentful_service_product_exporter
 
   def perform(action:, contentful_id:)
     Hutch.connect

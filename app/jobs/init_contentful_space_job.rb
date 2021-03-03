@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InitContentfulSpaceJob < ApplicationJob
-  queue_as :init_contentful_space
+  queue_as :contentful_service_init_contentful_space
 
   SPACE_NAME = "fytr"
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RestaurantCreatedJob < ApplicationJob
-  queue_as :restaurant_created
+  queue_as :contentful_service_restaurant_created
 
   def perform(sender_id:, contentful_id:)
     Hutch.connect
