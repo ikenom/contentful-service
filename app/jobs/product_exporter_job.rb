@@ -21,7 +21,7 @@ class ProductExporterJob < ApplicationJob
     routing_key = routing_key(action: action)
     Hutch.publish(
       routing_key,
-      product_id: product.id.to_s,
+      cms_id: product.contentful_id,
       vendor_id: product.restaurant_contentful_id,
       name: product.name,
       price: product.price,
@@ -40,7 +40,7 @@ class ProductExporterJob < ApplicationJob
   def routing_key(action:)
     case action
     when :add
-      "cms.product.added"
+      "cms.product.created"
     when :update
       "cms.product.updated"
     when :delete

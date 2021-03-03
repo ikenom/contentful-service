@@ -12,8 +12,8 @@ RSpec.describe ProductExporterJob, type: :job do
 
   it "should publish successfully for add" do
     expect(Hutch).to receive(:publish).with(
-      "cms.product.added",
-      product_id: product.id.to_s,
+      "cms.product.created",
+      cms_id: product.contentful_id,
       vendor_id: product.restaurant_contentful_id,
       name: product.name,
       price: product.price,
@@ -27,7 +27,7 @@ RSpec.describe ProductExporterJob, type: :job do
   it "should publish successfully for update" do
     expect(Hutch).to receive(:publish).with(
       "cms.product.updated",
-      product_id: product.id.to_s,
+      cms_id: product.contentful_id,
       vendor_id: product.restaurant_contentful_id,
       name: product.name,
       price: product.price,
@@ -50,7 +50,7 @@ RSpec.describe ProductExporterJob, type: :job do
 
   describe "#routing_key" do
     it "should use add queue" do
-      expect(Hutch).to receive(:publish).with("cms.product.added", any_args)
+      expect(Hutch).to receive(:publish).with("cms.product.created", any_args)
 
       action = :add
       exporter.perform_now(action: action, contentful_id: product.contentful_id)
