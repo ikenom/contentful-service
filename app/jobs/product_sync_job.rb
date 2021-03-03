@@ -3,7 +3,7 @@
 class ProductSyncJob < ApplicationJob
   include ContentfulClient
 
-  queue_as :contentful_service_product_sync
+  queue_as :product_sync
 
   def perform(contentful_id:, content_type:)
     contentful_product = contentful_client.entries(:content_type => content_type, :include => 2, "sys.id" => contentful_id).first
@@ -11,6 +11,7 @@ class ProductSyncJob < ApplicationJob
       case content_type
       when "meal" then Meal
       when "ingredient" then Ingredient
+      when "prepped_ingredient" then PreppedIngredient
       end
     product = product_type.where(contentful_id: contentful_id).first
 

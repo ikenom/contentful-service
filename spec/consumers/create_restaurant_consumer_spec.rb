@@ -3,7 +3,7 @@
 RSpec.describe CreateRestaurantConsumer do
   let(:message) do
     {
-      user_id: Faker::Alphanumeric.alpha,
+      sender_id: Faker::Alphanumeric.alpha,
       name: Faker::Alphanumeric.alpha
     }
   end
@@ -15,9 +15,10 @@ RSpec.describe CreateRestaurantConsumer do
 
   it "should enqueue create restaurant jobs" do
     consumer.process(message)
-    expect(CreateRestaurantJob).to have_been_enqueued.with(hash_including({
-                                                                            user_id: message[:user_id],
-                                                                            name: message[:name],
-                                                                          }))
+    expect(CreateRestaurantJob).to have_been_enqueued.with({
+                                                                            sender_id: message[:sender_id],
+                                                                            restaurant_name: message[:name],
+                                                                            space_name: InitContentfulSpaceJob::SPACE_NAME,
+                                                                          })
   end
 end

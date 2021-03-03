@@ -12,6 +12,7 @@ x-default-app: &default-app
   CONTENTFUL_ACCESS_TOKEN: $CONTENTFUL_ACCESS_TOKEN
   CONTENTFUL_SPACE_ID: $CONTENTFUL_SPACE_ID
   CONTENTFUL_MANAGEMENT_ACCESS_TOKEN: $CONTENTFUL_MANAGEMENT_ACCESS_TOKEN
+  CONTENTFUL_ORG_ID: $CONTENTFUL_ORG_ID
 
 x-default-volumes: &default-volumes
   - .:/app
@@ -31,7 +32,7 @@ services:
     networks:
       - network
     ports:
-      - "4000:3000"
+      - "4040:3000"
     depends_on:
       - mongo
 
@@ -63,16 +64,20 @@ services:
     image: mongo:4.2.5
     restart: always
     ports:
-      - "5001:27017"
+      - "5041:27017"
     networks:
       - network
 
   rabbitmq:
-    image: 'bitnami/rabbitmq:latest'
-    ports:
-      - "5002:15672"
-    networks:
-      - network
+      image: rabbitmq:management
+      environment:
+          RABBITMQ_ERLANG_COOKIE: d
+          RABBITMQ_DEFAULT_USER: user
+          RABBITMQ_DEFAULT_PASS: bitnami
+      ports:
+        - 5042:15672
+      networks:
+        - network
 
 volumes:
   tmp:

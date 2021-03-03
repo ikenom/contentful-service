@@ -2,14 +2,13 @@
 
 class CreateRestaurantConsumer
   include Hutch::Consumer
-  consume "cms.restaurant.create"
+  consume "cms.vendor.create"
 
   def process(message)
     CreateRestaurantJob.perform_later(
-      user_id: message[:user_id],
-      name: message[:name],
-      access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"],
-      space_id: ENV["CONTENTFUL_SPACE_ID"]
+      sender_id: message[:sender_id],
+      restaurant_name: message[:name],
+      space_name: InitContentfulSpaceJob::SPACE_NAME,
     )
   end
 end

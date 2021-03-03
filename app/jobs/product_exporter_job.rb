@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductExporterJob < ApplicationJob
-  queue_as :contentful_service_product_exporter
+  queue_as :product_exporter
 
   def perform(action:, contentful_id:)
     Hutch.connect
@@ -18,17 +18,14 @@ class ProductExporterJob < ApplicationJob
 
   def upsert(action:, contentful_id:)
     product = Product.find_by(contentful_id: contentful_id)
-    owner = Restaurant.find_by(contentful_id: product.restaurant_contentful_id)
     routing_key = routing_key(action: action)
     Hutch.publish(
       routing_key,
       product_id: product.id.to_s,
-      product_type: product._type,
-      product: {
-        name: product.name,
-        price: product.price,
-        owner_id: owner.user_id
-      }
+      vendor_id: product.restaurant_contentful_id,
+      name: product.name,
+      price: product.price,
+      type: product._type,
     )
   end
 

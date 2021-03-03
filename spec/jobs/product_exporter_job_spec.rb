@@ -14,12 +14,10 @@ RSpec.describe ProductExporterJob, type: :job do
     expect(Hutch).to receive(:publish).with(
       "cms.product.added",
       product_id: product.id.to_s,
-      product_type: product._type,
-      product: {
-        name: product.name,
-        price: product.price,
-        owner_id: restaurant.user_id
-      }
+      vendor_id: product.restaurant_contentful_id,
+      name: product.name,
+      price: product.price,
+      type: product._type
     )
 
     action = :add
@@ -30,12 +28,10 @@ RSpec.describe ProductExporterJob, type: :job do
     expect(Hutch).to receive(:publish).with(
       "cms.product.updated",
       product_id: product.id.to_s,
-      product_type: product._type,
-      product: {
-        name: product.name,
-        price: product.price,
-        owner_id: restaurant.user_id
-      }
+      vendor_id: product.restaurant_contentful_id,
+      name: product.name,
+      price: product.price,
+      type: product._type
     )
 
     action = :update

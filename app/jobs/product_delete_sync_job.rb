@@ -3,13 +3,14 @@
 class ProductDeleteSyncJob < ApplicationJob
   include ContentfulClient
 
-  queue_as :contentful_service_product_delete_sync
+  queue_as :product_delete_sync
 
   def perform(content_type:)
     product_type =
       case content_type
       when "meal" then Meal
       when "ingredient" then Ingredient
+      when "prepped_ingredient" then PreppedIngredient
       when "restaurant" then Restaurant
       end
 

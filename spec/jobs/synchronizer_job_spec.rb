@@ -12,12 +12,12 @@ RSpec.describe SynchronizerJob, :vcr, type: :job do
   it "should enqueue product sync jobs" do
     perform
 
-    expect(ProductSyncJob).to have_been_enqueued.exactly(2)
+    expect(ProductSyncJob).to have_been_enqueued.exactly(3)
   end
 
   it "should enqueue product delete sync job" do
     perform
 
-    expect(ProductDeleteSyncJob).to have_been_enqueued.exactly(3)
+    expect(ProductDeleteSyncJob).to have_been_enqueued.exactly(4)
   end
 end

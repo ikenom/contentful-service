@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :restaurant do
     contentful_id { Faker::Alphanumeric.alpha }
-    user_id { Faker::Alphanumeric.alpha }
+    name { Faker::Name.name }
   end
 end

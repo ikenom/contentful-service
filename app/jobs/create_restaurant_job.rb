@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 class CreateRestaurantJob < ApplicationJob
-  queue_as :contentful_service_create_restaurant
+  queue_as :create_restaurant
 
-  def perform(user_id:, access_token:, space_id:, name:)
-    raise "Restaurant with user id: #{user_id} already exists" if Restaurant.where(user_id: user_id).exists?
+  def perform(sender_id:, space_name:, restaurant_name:)
+    raise "Restaurant with name: #{restaurant_name} already exists" if Restaurant.where(name: restaurant_name).exists?
 
-    contentful_management_service = ContentfulManagement.new(access_token: access_token)
-    restaurant_entry = contentful_management_service.create_restaurant(space_id: space_id, name: name)
+    contentful_entry_service = ContentfulEntryService.new(access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"])
+    environment = contentful_entry_service.environment(space_name: space_name, environment_name: "master")
+    restaurant_entry = contentful_entry_service.create_restaurant(environment: environment, name: restaurant_name)
 
-    Restaurant.create!(user_id: user_id, contentful_id: restaurant_entry.id)
+    Restaurant.create!(contentful_id: restaurant_entry.id, name: restaurant_name)
   end
 end

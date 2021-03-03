@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# config/initializers/sneakers.rb
 require "sneakers"
 
 release_name = ENV["RELEASE_NAME"].upcase
