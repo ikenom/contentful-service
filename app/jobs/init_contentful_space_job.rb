@@ -6,7 +6,7 @@ class InitContentfulSpaceJob < ApplicationJob
   SPACE_NAME = "fytr"
 
   def perform
-    client = ContententfulContentTypeService.new(access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"])
+    client = ContentfulContentTypeService.new(access_token: ENV["CONTENTFUL_MANAGEMENT_ACCESS_TOKEN"])
     content_types = []
 
     space = client.create_space(name: SPACE_NAME, org_id: ENV["CONTENTFUL_ORG_ID"])
@@ -35,8 +35,8 @@ class InitContentfulSpaceJob < ApplicationJob
     client.create_category_content_type(
       environment: environment,
       name: "Ingredients",
-      id: ContententfulContentTypeService::INGREDIENTS_ID,
-      validation_id: ContententfulContentTypeService::INGREDIENT_ID
+      id: ContentfulContentTypeService::INGREDIENTS_ID,
+      validation_id: ContentfulContentTypeService::INGREDIENT_ID
     )
   end
 
@@ -44,8 +44,8 @@ class InitContentfulSpaceJob < ApplicationJob
     client.create_category_content_type(
       environment: environment,
       name: "Prepped Ingredients",
-      id: ContententfulContentTypeService::PREPPED_INGREDIENTS_ID,
-      validation_id: ContententfulContentTypeService::PREPPED_INGREDIENT_ID
+      id: ContentfulContentTypeService::PREPPED_INGREDIENTS_ID,
+      validation_id: ContentfulContentTypeService::PREPPED_INGREDIENT_ID
     )
   end
 
@@ -53,8 +53,8 @@ class InitContentfulSpaceJob < ApplicationJob
     client.create_category_content_type(
       environment: environment,
       name: "Meals",
-      id: ContententfulContentTypeService::MEALS_ID,
-      validation_id: ContententfulContentTypeService::MEAL_ID
+      id: ContentfulContentTypeService::MEALS_ID,
+      validation_id: ContentfulContentTypeService::MEAL_ID
     )
   end
 end

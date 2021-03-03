@@ -92,6 +92,6 @@ rabbitmq:
     erlangCookie: d
 
 contentful:
-  access_token: sHD83tNC4BtCZFoEwQ54PjfH9isCEbIBN2HQDJ1rla0
-  space_id: gdnbla9utfkg
-  management_access_token: CFPAT-klmCDVSL0_IFZ4lvCZ78WZ0Pk4u8pMVRFyC4XcSjY5g
+  access_token: ""
+  management_access_token: ""
+  org_id: ""
