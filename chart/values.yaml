@@ -95,3 +95,4 @@ contentful:
   access_token: ""
   management_access_token: ""
   org_id: ""
+  space_id: ""

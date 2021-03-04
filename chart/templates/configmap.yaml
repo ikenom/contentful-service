@@ -9,3 +9,4 @@ data:
   CONTENTFUL_ACCESS_TOKEN: {{ .Values.contentful.access_token }}
   CONTENTFUL_MANAGEMENT_ACCESS_TOKEN: {{ .Values.contentful.management_access_token }}
   CONTENTFUL_ORG_ID: {{ .Values.contentful.org_id }}
+  CONTENTFUL_SPACE_ID: {{ .Values.contentful.space_id }}
