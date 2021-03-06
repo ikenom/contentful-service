@@ -92,7 +92,7 @@ rabbitmq:
     erlangCookie: d
 
 contentful:
-  access_token: ""
-  management_access_token: ""
-  org_id: ""
-  space_id: ""
+  access_token: "a"
+  management_access_token: "a"
+  org_id: "a"
+  space_id: "a"

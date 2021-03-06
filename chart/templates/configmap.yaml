@@ -5,7 +5,7 @@ metadata:
 data:
   RELEASE_NAME: {{ .Release.Name }}
   RAILS_ENV: production
-  SECRET_KEY_BASE: 670d313e606e6219ab9c389f10979459326dbefeccf27ddaeec295d75a1bf8a546e9d6969e4199081b6bfede8b691251d00da67956a8b90211132cefd319e610
+  SECRET_KEY_BASE: key
   RABBITMQ_USERNAME: {{ .Values.rabbitmq.auth.username }}
   RABBITMQ_PASSWORD: {{ .Values.rabbitmq.auth.password }}
   CONTENTFUL_ACCESS_TOKEN: {{ .Values.contentful.access_token }}
